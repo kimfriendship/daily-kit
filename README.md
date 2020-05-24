@@ -6,8 +6,9 @@
 ## 목표
 react를 활용하여 todoList만들기, API 연동
 
-<br>
-## 참여 인원
+
+## 참여인원
+
 3명 (김우정, 이희진, 정호영)
 
 
@@ -27,8 +28,6 @@ News page -
 <br>
 ## 사용 기술
 React, javascript, github, css
-
 <br>
+
 ## 디렉토리 구조
-
-
