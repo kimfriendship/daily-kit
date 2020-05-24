@@ -20,11 +20,13 @@ Todo list, Weather, News page 만들기
 ### 2차 목표
 
 Todo list - 리스트 추가, 삭제기능
+<br>
 Weather - 
+<br>
 News page - 
 <br>
 ## 사용 기술
-React, css, javascript, github
+React, javascript, github, css
 
 <br>
 ## 디렉토리 구조
