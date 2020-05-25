@@ -13,18 +13,40 @@ const Layout = () => {
   const [today, getToday] = useState(new String(new Date()).split(' '));
 
   useEffect(() => {
-    setInterval(() => getToday(new String(new Date()).split(' ')), 1000);
+    setInterval(() => getToday(new String(new Date()).split(' ')), 60000);
   }, []);
 
   const [day, month, date, year, time] = today;
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+
+  const getMonth = () => {
+    const monthNumber = months.findIndex((m) => m === month) + 1;
+    return monthNumber < 10 ? '0' + monthNumber : monthNumber;
+  };
+
+  const getTime = () => {
+    return new String(time).slice(0, 5);
+  };
 
   return (
     <div className={'outerWrapper'}>
       <nav className={'nav'}>
         <h1 className={'date'}>
-          {month} {date} {day}
+          {getMonth()} / {date} / {day.toUpperCase()}
         </h1>
-        <h2 className={'time'}>{time}</h2>
+        <h2 className={'time'}>{getTime()}</h2>
         <ul className={'menuList'}>
           <li>
             <NavLink exact to="/" activeStyle={activeStyle}>

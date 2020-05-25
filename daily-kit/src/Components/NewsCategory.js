@@ -1,8 +1,7 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import Loading from '../Pages/Loading';
 import axios from 'axios';
-import Loading from './Loading';
-import NewsCategory from '../Components/NewsCategory';
-import SubRouter from '../Router/SubRouter';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -29,10 +28,12 @@ const reducer = (state, action) => {
   }
 };
 
-const News = ({ match }) => {
-  const category = match.params.category || 'all';
-  console.log(category);
-  // const category = match.params.category || 'all';
+const NewsCategory = () => {
+  const onClick = (e) => {
+    e.target.style.fontWeight = 700;
+    e.target.style.color = '#599681';
+    e.target.style.borderBottom = '2px solid #68af96';
+  };
 
   // const [state, dispatch] = useReducer(reducer, {
   //   data: null,
@@ -40,7 +41,7 @@ const News = ({ match }) => {
   //   loading: false,
   // });
 
-  // const fetchData = async (category) => {
+  // const fetchData = async () => {
   //   dispatch({ type: 'LOADING' });
   //   try {
   //     const query = category === 'all' ? '' : `&category=${category}`;
@@ -65,31 +66,24 @@ const News = ({ match }) => {
   // if (!data) return null;
 
   return (
-    <div className={'newsWrapper'}>
-      <h2 className={'newsPageTitle'}>Today's News</h2>
-      <ul className={'categories'}>
-        <NewsCategory />
-      </ul>
-      <ul className={'newsList'}>
-        {/* {data.map((news, i) => {
-          return (
-            <li key={i} className={'news'}>
-              <a href={news.url}>
-                <h3 className={'newsTitle'}>{news.title}</h3>
-                <img
-                  className={'newsThumbnail'}
-                  src={news.urlToImage}
-                  alt="Thumbnail"
-                />
-                <p className={'newsDetail'}>{news.description}</p>
-              </a>
-            </li>
-          );
-        })} */}
-      </ul>
-      <SubRouter />
-    </div>
+    <>
+      <li onClick={onClick}>
+        <NavLink to="/News">전체</NavLink>
+      </li>
+      <li onClick={onClick}>
+        <NavLink to="/News/business">비즈니스</NavLink>
+      </li>
+      <li onClick={onClick}>
+        <NavLink to="/News/entertainment">엔터테인먼트</NavLink>
+      </li>
+      <li onClick={onClick}>
+        <NavLink to="/News/technology">기술</NavLink>
+      </li>
+      <li onClick={onClick}>
+        <NavLink to={'/News/sports'}>스포츠</NavLink>
+      </li>
+    </>
   );
 };
 
-export default News;
+export default NewsCategory;

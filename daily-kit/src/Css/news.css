@@ -19,13 +19,17 @@
   margin: 0 auto 30px;
   padding: 25px 0 0;
   justify-content: space-around;
-  color: #7b7b7b;
-  border-bottom: 2px solid #7b7b7b;
 }
 
 .categories > li {
   cursor: pointer;
   padding: 5px 10px;
+}
+
+.categories > li > a {
+  color: #7b7b7b;
+  text-decoration: none;
+  width: 100%;
 }
 
 .newsList {
