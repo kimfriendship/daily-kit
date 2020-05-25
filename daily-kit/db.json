@@ -2,7 +2,7 @@
   "todos": [
     {
       "content": "신기방기",
-      "status": "completed",
+      "status": "incompleted",
       "id": 1
     },
     {
@@ -12,12 +12,12 @@
     },
     {
       "content": "맥주먹기",
-      "status": "completed",
+      "status": "incompleted",
       "id": 3
     },
     {
       "content": "잠자기",
-      "status": "completed",
+      "status": "incompleted",
       "id": 4
     }
   ]

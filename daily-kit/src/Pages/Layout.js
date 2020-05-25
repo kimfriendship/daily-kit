@@ -70,6 +70,7 @@ const Layout = () => {
               About
             </NavLink>
           </li>
+          <span className={'dailyKit'}>Daily Kit</span>
         </ul>
         <MainRouter />
       </nav>

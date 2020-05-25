@@ -89,3 +89,12 @@
   float: right;
   line-height: 1.25em;
 }
+
+.dailyKit {
+  text-align: center;
+  font-style: italic;
+  position: absolute;
+  font-size: 1.5em;
+  bottom: 100px;
+  left: 200px;
+}
