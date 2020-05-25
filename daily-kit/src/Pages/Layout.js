@@ -37,14 +37,16 @@ const Layout = () => {
   };
 
   const getTime = () => {
-    return new String(time).slice(0, 5);
+    const hour = new String(time).slice(0, 2);
+    const min = new String(time).slice(3, 5);
+    return hour < 12 ? `${hour} : ${min} AM` : `${hour - 12} : ${min} PM`;
   };
 
   return (
     <div className={'outerWrapper'}>
       <nav className={'nav'}>
         <h1 className={'date'}>
-          {getMonth()} / {date} / {day.toUpperCase()}
+          {year} / {getMonth()} / {date} / {day.toUpperCase()}
         </h1>
         <h2 className={'time'}>{getTime()}</h2>
         <ul className={'menuList'}>
