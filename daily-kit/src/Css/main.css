@@ -1,0 +1,55 @@
+body,
+html,
+.App {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Layout */
+.outerWrapper {
+  background: #f3f3f3;
+  border-radius: 10px;
+  width: 90%;
+  height: 90vh;
+  margin: 30px auto;
+}
+
+.nav {
+  background: #68af96;
+  width: 25%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  color: white;
+}
+
+.date {
+  padding: 50% 0 30px;
+  font-size: 1.2em;
+}
+
+.time {
+  font-size: 1.4em;
+  font-weight: 800;
+}
+
+.date,
+.time {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.menuList {
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.menuList > li {
+}
+
+.menuList > li > a {
+  color: white;
+  text-decoration: none;
+  height: 20px;
+  display: block;
+  padding: 20px 0 15px;
+}
