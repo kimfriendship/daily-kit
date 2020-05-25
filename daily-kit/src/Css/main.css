@@ -12,9 +12,11 @@ html,
   width: 90%;
   height: 90vh;
   margin: 30px auto;
+  box-shadow: 0 3px 3px lightgray;
 }
 
 .nav {
+  z-index: 300;
   background: #68af96;
   width: 25%;
   height: 100%;
@@ -39,11 +41,8 @@ html,
 }
 
 .menuList {
-  margin: 30px auto 0;
+  margin: 50px auto 0;
   text-align: center;
-}
-
-.menuList > li {
 }
 
 .menuList > li > a {
@@ -52,4 +51,24 @@ html,
   height: 20px;
   display: block;
   padding: 20px 0 15px;
+}
+
+/* Loading */
+.loadingWrapper {
+  position: absolute;
+  top: 0;
+  left: 27.5%;
+  width: 68%;
+  background: white;
+  border-radius: 10px;
+  height: 90vh;
+  margin: 30px auto;
+  box-shadow: 0 3px 3px lightgray;
+}
+
+.loading {
+  width: 10%;
+  position: absolute;
+  top: 45%;
+  left: 45%;
 }

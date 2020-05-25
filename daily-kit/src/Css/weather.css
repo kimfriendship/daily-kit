@@ -7,8 +7,21 @@
   color:  #68af96;
 }
 
+.today {
+  position: absolute;
+  right: 3%;
+  top: 11%;
+}
+.todayIcons > .todayIcon {
+  color: gray;
+  size: 100px;
+  
+}
+.todayTemp {
+  font-size: 40px;
+}
 .currentWeather {
-  background-color:white;
+  
   width: 400px;
   height: 300px;
   position: absolute;
@@ -18,7 +31,7 @@
 }
 
 .timeWeather {
-  background-color: white;
+  
   width: 200px;
   height: 300px;
   position: absolute;
@@ -32,13 +45,16 @@
   color: black;
   position: absolute;
   left: 30%;
+  bottom: 10%;
   display: flex; 
   width: 900px;
-  height: 100px;
+  height: 150px;
   border-radius: 10px;
+  align-items: center;
 }
 .dailyWeather > li {
-  padding-right: 30px;
+  padding-right: 50px;
+  margin-left: 50px;
   
   align-items: center;
 };

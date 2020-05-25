@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../Css/weather.css';
+import { faCloud, faSun, faUmbrella, faSmog } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 
 function Weather() {
@@ -20,39 +22,57 @@ function Weather() {
       console.log(e);
     }
   };
-
   useEffect(() => {
     fetchData();
   }, []);
-
-  let currentDate = new Date(1590634800);
-  const date = `${currentDate.getDay()}`
+  if (!data) return null;
 
 
-  let weekday = new Array();
-  weekday[0] = "SUN";
-  weekday[1] = "MON";
-  weekday[2] = "TUE";
-  weekday[3] = "WED";
-  weekday[4] = "THU";
-  weekday[5] = "FRI";
-  weekday[6] = "SAT";
-  console.log(weekday[date]);
+
+  const day = new String(new Date()).slice(0, 3)
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
+  const getDays = (i) => {
+    const daysNumbers = days[days.findIndex((e) => e === day) + i];
+    console.log(i)
+
+    return daysNumbers;
+  };
+
+  const time = new String(new Date()).slice(16, 18);
+  const getTime = () => {
+  }
 
 
+  const getIcons = (main) => {
+    switch (main) {
+      case 'Clouds':
+        return <FontAwesomeIcon className={"todayIcon"} icon={faCloud} size="2x" />
+      case 'Clear':
+        return <FontAwesomeIcon className={"todayIcon"} icon={faSun} size="2x" />
+      case 'Haze':
+        return <FontAwesomeIcon className={"todayIcon"} icon={faSmog} size="2x" />
+      case 'Rain':
+        return <FontAwesomeIcon className={"todayIcon"} icon={faUmbrella} size="2x" />
+      default:
+        return <FontAwesomeIcon className={"todayIcon"} icon={faSun} size="2x" />
+    }
+  }
   const { current, hourly, daily } = data;
 
 
-  if (!data) return null;
 
   return (
     <div>
       <h2 className={'weatherHeader'}>Today's Weather</h2>
       <div className={'currentWeather'}>
-        <div>
-          {current.weather.map(c => c.main)}
+        <div className="todayIcons">
+          {current.weather.map(c => getIcons(c.main))}
         </div>
-        <div>
+        <div className="today">
+          <div className="todayTemp">
+            {current.temp.toFixed(1)}°
+          </div>
           <div>
             체감기온{current.feels_like.toFixed(1)}°
             자외선{current.uvi.toFixed(0)}
@@ -62,15 +82,14 @@ function Weather() {
             습도{current.humidity}%
           </div>
         </div>
-
       </div>
       <ul className={'timeWeather'}>
-        {hourly.map(h => <li key={h}>{h.dt} {h.temp.toFixed(0)}°</li>)}
+        {hourly.slice(0, 3).map(h => <li key={h}>{time}시 {h.weather.map(w => getIcons(w.main))}{h.temp.toFixed(0)}°</li>)}
       </ul>
       <div>
         <ul className={'dailyWeather'}>
-          {daily.map(day => <li key={day}> {day.dt}
-            {day.weather.map(w => <div key={w}>{w.main}
+          {daily.slice(0, 6).map((day, i) => <li key={day}> {getDays(i + 1)}
+            {day.weather.map(w => <div key={w}>{getIcons(w.main)}
             </div>)}
             {day.temp.min.toFixed(0)}°/{day.temp.max.toFixed(0)}°
         </li>)}
