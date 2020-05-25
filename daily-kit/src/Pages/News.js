@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 import axios from 'axios';
+import Loading from './Loading';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -52,7 +53,7 @@ const News = () => {
 
   const { data, error, loading } = state;
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   if (error) return <div>Error...</div>;
   if (!data) return null;
 

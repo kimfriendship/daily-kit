@@ -69,6 +69,8 @@
 .newsThumbnail {
   width: 150px;
   float: left;
+  background: lightgrey;
+  min-height: 100px;
 }
 
 .newsDetail {
