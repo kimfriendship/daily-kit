@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-new-wrappers */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import MainRouter from '../Router/MainRouter';

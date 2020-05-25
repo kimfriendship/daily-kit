@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../Css/weather.css';
 
 function Weather() {
 
@@ -34,12 +35,22 @@ function Weather() {
 
   return (
     <div>
-      <h2>Today's Weather</h2>
+      <h2 className={'weatherHeader'}>Today's Weather</h2>
+      <div className={'currentWeather'}>
 
-      <div>
-        {current.dt}, {current.humidity} , {current.wind_speed}
       </div>
-      {daily.map(day => <div>{day.dt}</div>)}
+      <div className={'timeWeather'}>
+
+      </div>
+      <div>
+        <ul className={'dailyWeather'}>
+          {daily.map(day => <li key={day}> {day.dt}
+            {day.weather.map(weather => <div key={weather}>{weather.main}
+            </div>)}
+            {day.temp.min.toFixed(0)}°/{day.temp.max.toFixed(0)}°
+        </li>)}
+        </ul>
+      </div>
     </div>
   );
 }

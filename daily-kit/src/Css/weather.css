@@ -1,0 +1,42 @@
+.weatherHeader {
+  font-size: 40px;
+  position: absolute;
+  top: 10%;
+  left: 52%;
+  width: 62%;
+  color:  #68af96;
+}
+
+.currentWeather {
+  background-color:white;
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  left: 30%;
+  top: 20%;
+}
+
+.timeWeather {
+  background-color: white;
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  left: 79%;
+  top: 20%;
+}
+
+.dailyWeather {
+  background:white;
+  color: black;
+  position: absolute;
+  left: 30%;
+  display: flex; 
+  width: 900px;
+  height: 100px;
+  border-radius: 10px;
+}
+.dailyWeather > li {
+  padding-right: 30px;
+  
+  align-items: center;
+};
