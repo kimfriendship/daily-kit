@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Loading from './Loading';
 import '../Css/weather.css';
 import {
   faCloud,
@@ -11,24 +12,26 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Weather() {
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState('');
 
   const fetchData = async () => {
+    setLoading(true);
     try {
       const key = '0550b3a23b9c892ac8b4bff41f019f8e';
       const url = `https://api.openweathermap.org/data/2.5/onecall?lat=37.532600&lon=127.024612&units=metric&
       exclude=hourly,daily&appid=${key}`;
       const response = await axios.get(url);
       setData(response.data);
-      console.log(response.data);
     } catch (e) {
       console.log(e);
     }
+    setLoading(false);
   };
+
   useEffect(() => {
     fetchData();
   }, []);
-  if (!data) return null;
 
   const day = new String(new Date()).slice(0, 3);
   const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -85,7 +88,10 @@ function Weather() {
         );
     }
   };
+
   const { current, hourly, daily } = data;
+  if (!data) return null;
+  if (loading) return <div>loading</div>;
 
   return (
     <div className={'weatherWrapper'}>

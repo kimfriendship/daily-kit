@@ -57,8 +57,9 @@ html,
 
 /* Loading */
 .loadingWrapper {
+  z-index: 500;
   position: absolute;
-  top: -80%;
+  top: -75%;
   left: -8%;
   width: 116%;
   background: white;
