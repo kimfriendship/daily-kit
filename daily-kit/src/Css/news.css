@@ -1,5 +1,4 @@
 .newsWrapper {
-  background: lightgoldenrodyellow;
   position: absolute;
   top: 10%;
   left: 30%;
@@ -16,28 +15,33 @@
 
 .categories {
   display: flex;
-  width: 80%;
-  margin: 0 auto 40px;
-  padding: 15px 0 3px;
+  width: 90%;
+  margin: 0 auto 30px;
+  padding: 25px 0 0;
   justify-content: space-around;
   color: #7b7b7b;
   border-bottom: 2px solid #7b7b7b;
 }
 
 .categories > li {
+  cursor: pointer;
   padding: 5px 10px;
 }
 
 .newsList {
   height: 65vh;
   overflow-y: scroll;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   color: black;
 }
 
 .news {
+  border-radius: 5px;
+  background: white;
   height: 100px;
+  margin: 0 0 20px;
+  overflow: hidden;
 }
 
 .news > * {
@@ -52,25 +56,28 @@
 }
 
 .newsTitle {
+  padding: 10px 0;
   font-weight: 700;
   font-size: 1.1em;
   float: right;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  width: 67%;
-  margin-bottom: 10px;
+  width: calc(100% - 160px);
 }
 
 .newsThumbnail {
-  width: 30%;
+  width: 150px;
   float: left;
-  overflow: hidden;
 }
 
 .newsDetail {
-  /* text-overflow: ellipsis;
+  padding: 10px 0 5px;
+  text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap; */
+  white-space: wrap;
   font-size: 0.9em;
+  width: calc(100% - 160px);
+  float: right;
+  line-height: 1.25em;
 }
