@@ -1,0 +1,142 @@
+.todoContainer {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  width: 62%;
+  padding: 0 30px;
+}
+
+.todoInputStyle {
+  margin: 20px 8px 5px;
+  width: 50%;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.buttonStyle {
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  padding: 3px 20px;
+  margin: 3px 0 3px 3px;
+  cursor: pointer;
+  background: white;
+  color: #68af96;
+  border: 1px solid #68af96;
+  font-weight: 600;
+}
+
+.buttonStyle:hover {
+  background: #68af96;
+  color: white;
+}
+
+.headerStyle {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0 10px;
+  font-size: larger;
+  font-weight: 900;
+  color: #68af96;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.listContainer > * {
+  border: 1px solid #edebe8;
+  background: #fff;
+  color: black;
+  height: 30px;
+  margin: 5px;
+  width: 50%;
+  border-radius: 3px;
+  padding: 5px;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+.iconStyle {
+  position: absolute;
+  right: 190px;
+  top: 20px;
+}
+.message {
+  color: black;
+  border-bottom: 2px solid #599681;
+  width: 30%;
+  padding: 8px;
+}
+.statusChange {
+  border: none;
+  height: 7px;
+  border-radius: 5px;
+  padding: 1px;
+  margin: 3px 5px;
+  cursor: pointer;
+  background: #68af96;
+  color: #fff;
+  border: 1px solid #68af96;
+  font-weight: 400;
+  left: 0;
+}
+
+.statusChange:hover {
+  background-color: #599681;
+  font-weight: 500;
+}
+
+.contentEditStyle {
+  cursor: pointer;
+}
+
+.completedStyle {
+  text-decoration: #49c47a wavy line-through;
+}
+.editInput {
+  border: 1px solid #88998d;
+  border-radius: 3px;
+}
+.editSubmit {
+  color: #f2665c;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.countSection {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px 230px;
+}
+.countSection > div {
+  border-bottom: 2px solid #68af96;
+  padding-bottom: 4px;
+}
+.todoWrapper {
+  width: 70%;
+}
+.containerStyle {
+  text-align: center;
+}
+.editinput {
+  background-color: #f2eceb;
+  height: 20px;
+}
+
+.numbering {
+  padding: 10px;
+}
