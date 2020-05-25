@@ -36,7 +36,7 @@
   height: 300px;
   color: black;
   float: left;
-  margin: 120px 0 30px 100px;
+  margin: 120px 0 80px 100px;
 }
 
 .todayTemp {
@@ -51,7 +51,7 @@
   height: 200px;
   color: black;
   float: right;
-  margin: 120px 100px 0 0;
+  margin: 160px 100px 0 0;
 }
 
 .timeWeather > li {
@@ -70,6 +70,12 @@
   border-radius: 10px;
   align-items: center;
   justify-content: space-between;
+}
+
+.timeWeather::after {
+  clear: both;
+  content: '';
+  display: block;
 }
 
 .dailyWeather > li {

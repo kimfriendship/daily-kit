@@ -1,7 +1,7 @@
 {
   "todos": [
     {
-      "content": "노래부르기",
+      "content": "신기방기",
       "status": "completed",
       "id": 1
     },
@@ -17,7 +17,7 @@
     },
     {
       "content": "잠자기",
-      "status": "incompleted",
+      "status": "completed",
       "id": 4
     }
   ]

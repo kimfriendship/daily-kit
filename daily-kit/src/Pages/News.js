@@ -46,6 +46,16 @@ const News = () => {
               Sports
             </NavLink>
           </li>
+          <li onClick={onClick}>
+            <NavLink to={'/science'} activeStyle={activeStyle}>
+              Science
+            </NavLink>
+          </li>
+          <li onClick={onClick}>
+            <NavLink to={'/health'} activeStyle={activeStyle}>
+              Health
+            </NavLink>
+          </li>
         </ul>
         <NewsList category={category} />
         <SubRouter />

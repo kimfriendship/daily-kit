@@ -123,20 +123,18 @@ function Weather() {
           </li>
         ))}
       </ul>
-      <div>
-        <ul className={'dailyWeather'}>
-          {daily.slice(0, 6).map((day, i) => (
-            <li key={day.dt}>
-              {' '}
-              {getDays(i + 1)}
-              {day.weather.map((w) => (
-                <div key={w.dt}>{getIcons(w.main)}</div>
-              ))}
-              {day.temp.min.toFixed(0)}°/{day.temp.max.toFixed(0)}°
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className={'dailyWeather'}>
+        {daily.slice(0, 6).map((day, i) => (
+          <li key={day.dt}>
+            {' '}
+            {getDays(i + 1)}
+            {day.weather.map((w) => (
+              <div key={w.dt}>{getIcons(w.main)}</div>
+            ))}
+            {day.temp.min.toFixed(0)}°/{day.temp.max.toFixed(0)}°
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
