@@ -18,7 +18,7 @@ html,
 .nav {
   z-index: 300;
   background: #68af96;
-  width: 25%;
+  width: 20%;
   height: 100%;
   border-radius: 10px 0 0 10px;
   color: white;
@@ -26,11 +26,12 @@ html,
 
 .date {
   padding: 50% 0 30px;
-  font-size: 1.2em;
+  font-size: 1.4em;
+  font-weight: 700;
 }
 
 .time {
-  font-size: 1.4em;
+  font-size: 3em;
   font-weight: 800;
 }
 
@@ -41,7 +42,7 @@ html,
 }
 
 .menuList {
-  margin: 50px auto 0;
+  margin: 80px auto 0;
   text-align: center;
 }
 
@@ -51,23 +52,24 @@ html,
   height: 20px;
   display: block;
   padding: 20px 0 15px;
+  font-size: 1.3em;
 }
 
 /* Loading */
 .loadingWrapper {
   position: absolute;
-  top: 0;
-  left: 27.5%;
-  width: 68%;
+  top: -80%;
+  left: -8%;
+  width: 116%;
   background: white;
-  border-radius: 10px;
-  height: 90vh;
+  border-radius: 0 10px 10px 0;
+  height: 89.8vh;
   margin: 30px auto;
   box-shadow: 0 3px 3px lightgray;
 }
 
 .loading {
-  width: 10%;
+  width: 5%;
   position: absolute;
   top: 45%;
   left: 45%;
