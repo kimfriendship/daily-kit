@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../Css/weather.css';
 
+
 function Weather() {
 
   const [data, setData] = useState("");
@@ -24,35 +25,60 @@ function Weather() {
     fetchData();
   }, []);
 
-  let date = new Date();
+  let currentDate = new Date(1590634800);
+  const date = `${currentDate.getDay()}`
+
+
+  let weekday = new Array();
+  weekday[0] = "SUN";
+  weekday[1] = "MON";
+  weekday[2] = "TUE";
+  weekday[3] = "WED";
+  weekday[4] = "THU";
+  weekday[5] = "FRI";
+  weekday[6] = "SAT";
+  console.log(weekday[date]);
 
 
   const { current, hourly, daily } = data;
 
 
   if (!data) return null;
-  console.log(daily.map(day => day));
 
   return (
     <div>
       <h2 className={'weatherHeader'}>Today's Weather</h2>
       <div className={'currentWeather'}>
+        <div>
+          {current.weather.map(c => c.main)}
+        </div>
+        <div>
+          <div>
+            체감기온{current.feels_like.toFixed(1)}°
+            자외선{current.uvi.toFixed(0)}
+          </div>
+          <div>
+            바람{current.wind_speed}ms
+            습도{current.humidity}%
+          </div>
+        </div>
 
       </div>
-      <div className={'timeWeather'}>
-
-      </div>
+      <ul className={'timeWeather'}>
+        {hourly.map(h => <li key={h}>{h.dt} {h.temp.toFixed(0)}°</li>)}
+      </ul>
       <div>
         <ul className={'dailyWeather'}>
           {daily.map(day => <li key={day}> {day.dt}
-            {day.weather.map(weather => <div key={weather}>{weather.main}
+            {day.weather.map(w => <div key={w}>{w.main}
             </div>)}
             {day.temp.min.toFixed(0)}°/{day.temp.max.toFixed(0)}°
         </li>)}
         </ul>
       </div>
-    </div>
+    </div >
   );
 }
 
 export default Weather;
+
