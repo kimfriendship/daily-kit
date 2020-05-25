@@ -34,12 +34,19 @@
 }
 
 .headerStyle {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   margin: 20px 0 0 10px;
   font-size: larger;
   font-weight: 900;
-  color: #68af96;
+  color: #68af96; */
+
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #599681;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .listContainer {

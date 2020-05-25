@@ -16,20 +16,21 @@ function Weather() {
   const [data, setData] = useState('');
 
   const fetchData = async () => {
-    setLoading(true);
     try {
       const key = '0550b3a23b9c892ac8b4bff41f019f8e';
       const url = `https://api.openweathermap.org/data/2.5/onecall?lat=37.532600&lon=127.024612&units=metric&
       exclude=hourly,daily&appid=${key}`;
       const response = await axios.get(url);
       setData(response.data);
+      setLoading(false);
     } catch (e) {
       console.log(e);
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
+    setLoading(true);
     fetchData();
   }, []);
 
@@ -91,7 +92,7 @@ function Weather() {
 
   const { current, hourly, daily } = data;
   if (!data) return null;
-  if (loading) return <div>loading</div>;
+  if (loading) return <Loading />;
 
   return (
     <div className={'weatherWrapper'}>
