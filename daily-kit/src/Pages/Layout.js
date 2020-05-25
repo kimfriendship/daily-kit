@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import MainRouter from '../Router/MainRouter';
 import '../Css/main.css';
@@ -10,7 +10,12 @@ const Layout = () => {
     width: '100%',
   };
 
-  let today = new String(new Date()).split(' ');
+  const [today, getToday] = useState(new String(new Date()).split(' '));
+
+  useEffect(() => {
+    setInterval(() => getToday(new String(new Date()).split(' ')), 1000);
+  }, []);
+
   const [day, month, date, year, time] = today;
 
   return (
