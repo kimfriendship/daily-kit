@@ -1,7 +1,24 @@
 {
   "todos": [
-    { "id": 1, "content": "React", "completed": false },
-    { "id": 2, "content": "HTML", "completed": false },
-    { "id": 3, "content": "JS", "completed": false }
+    {
+      "content": "노래부르기",
+      "status": "completed",
+      "id": 1
+    },
+    {
+      "content": "커피마시기",
+      "status": "incompleted",
+      "id": 2
+    },
+    {
+      "content": "맥주먹기",
+      "status": "completed",
+      "id": 3
+    },
+    {
+      "content": "잠자기",
+      "status": "incompleted",
+      "id": 4
+    }
   ]
 }
