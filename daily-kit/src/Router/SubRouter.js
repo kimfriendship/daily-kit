@@ -5,7 +5,7 @@ import News from '../Pages/News';
 const SubRouter = () => {
   return (
     <>
-      <Route path="/:category" component={News} />
+      <Route path="/News/:category" component={News} />
     </>
   );
 };

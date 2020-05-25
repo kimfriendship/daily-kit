@@ -1,94 +1,56 @@
-import React, { useEffect, useReducer } from 'react';
-import axios from 'axios';
-import Loading from './Loading';
-import NewsCategory from '../Components/NewsCategory';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import SubRouter from '../Router/SubRouter';
+import '../Css/news.css';
+import NewsList from '../Components/NewsList';
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'SUCCESS':
-      return {
-        data: action.data,
-        error: null,
-        loading: false,
-      };
-    case 'ERROR':
-      return {
-        data: null,
-        error: action.error,
-        loading: false,
-      };
-    case 'LOADING':
-      return {
-        data: null,
-        error: null,
-        loading: true,
-      };
-    default:
-      throw new Error('ERROR');
-  }
-};
+const News = () => {
+  const [category, setCategory] = useState('');
+  const activeStyle = {
+    fontWeight: 700,
+    color: '#599681',
+    borderBottom: '2px solid #68af96',
+  };
 
-const News = ({ match }) => {
-  const category = match.params.category || 'all';
-  console.log(category);
-  // const category = match.params.category || 'all';
-
-  // const [state, dispatch] = useReducer(reducer, {
-  //   data: null,
-  //   error: null,
-  //   loading: false,
-  // });
-
-  // const fetchData = async (category) => {
-  //   dispatch({ type: 'LOADING' });
-  //   try {
-  //     const query = category === 'all' ? '' : `&category=${category}`;
-  //     const url = `/v2/top-headlines?country=kr${query}&apiKey=72fb5a6e9f6e4a5c92b4c3336ac99755`;
-  //     const response = await axios.get(url);
-  //     dispatch({ type: 'SUCCESS', data: response.data.articles });
-  //     console.log(response.data.articles);
-  //   } catch (e) {
-  //     dispatch({ type: 'ERROR', error: e });
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  //   console.log(category);
-  // }, []);
-
-  // const { data, error, loading } = state;
-
-  // if (loading) return <Loading />;
-  // if (error) return <div>Error...</div>;
-  // if (!data) return null;
+  const onClick = (e) => {
+    setCategory(e.target.textContent);
+  };
 
   return (
-    <div className={'newsWrapper'}>
-      <h2 className={'newsPageTitle'}>Today's News</h2>
-      <ul className={'categories'}>
-        <NewsCategory />
-      </ul>
-      <ul className={'newsList'}>
-        {/* {data.map((news, i) => {
-          return (
-            <li key={i} className={'news'}>
-              <a href={news.url}>
-                <h3 className={'newsTitle'}>{news.title}</h3>
-                <img
-                  className={'newsThumbnail'}
-                  src={news.urlToImage}
-                  alt="Thumbnail"
-                />
-                <p className={'newsDetail'}>{news.description}</p>
-              </a>
-            </li>
-          );
-        })} */}
-      </ul>
-      <SubRouter />
-    </div>
+    <>
+      <div className={'newsWrapper'}>
+        <h2 className={'newsPageTitle'}>Today's News</h2>
+        <ul className={'categories'}>
+          <li onClick={onClick}>
+            <NavLink to="/all" activeStyle={activeStyle}>
+              All
+            </NavLink>
+          </li>
+          <li onClick={onClick}>
+            <NavLink to="/business" activeStyle={activeStyle}>
+              Business
+            </NavLink>
+          </li>
+          <li onClick={onClick}>
+            <NavLink to="/entertainment" activeStyle={activeStyle}>
+              Entertainment
+            </NavLink>
+          </li>
+          <li onClick={onClick}>
+            <NavLink to="/technology" activeStyle={activeStyle}>
+              Technology
+            </NavLink>
+          </li>
+          <li onClick={onClick}>
+            <NavLink to={'/sports'} activeStyle={activeStyle}>
+              Sports
+            </NavLink>
+          </li>
+        </ul>
+        <NewsList category={category} />
+        <SubRouter />
+      </div>
+    </>
   );
 };
 

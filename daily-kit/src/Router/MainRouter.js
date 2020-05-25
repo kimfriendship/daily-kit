@@ -12,6 +12,7 @@ const MainRouter = () => {
       <Route path="/Weather" component={Weather} />
       <Route path="/News" component={News} />
       <Route path="/About" component={About} />
+      <Route path="/:category" component={News} />
       <Route
         render={({ location }) => {
           return (
