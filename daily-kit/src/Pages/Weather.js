@@ -39,7 +39,7 @@ function Weather() {
 
   const getDays = (i) => {
     const daysNumbers = days[days.findIndex((e) => e === day) + i];
-    return daysNumbers.toUpperCase();
+    return daysNumbers;
   };
 
   const time = new String(new Date()).slice(16, 18);
