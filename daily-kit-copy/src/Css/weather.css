@@ -1,0 +1,91 @@
+.weatherWrapper {
+  position: absolute;
+  top: 10%;
+  left: 28%;
+  width: 62%;
+}
+
+.weatherHeader {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #599681;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.today {
+  display: inline;
+  position: absolute;
+  top: 350px;
+  left: 360px;
+}
+
+.today > div > * {
+  display: inline-block;
+  padding: 5px 10px;
+  width: 100px;
+}
+
+.todayIcon {
+  color: gray;
+}
+
+.currentWeather {
+  width: 400px;
+  height: 300px;
+  color: black;
+  float: left;
+  margin: 120px 0 80px 100px;
+}
+
+.todayTemp {
+  font-size: 70px;
+  position: absolute;
+  top: -70px;
+  left: 10px;
+}
+
+.timeWeather {
+  width: 180px;
+  height: 200px;
+  color: black;
+  float: right;
+  margin: 160px 100px 0 0;
+}
+
+.timeWeather > li {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dailyWeather {
+  background: white;
+  color: black;
+  display: flex;
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timeWeather::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.dailyWeather > li {
+  width: 20%;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.dailyWeather > li > * {
+  padding: 10px 0;
+}
